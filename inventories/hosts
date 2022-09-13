@@ -1,5 +1,8 @@
 all:
-  nginx1:
-    10.1.1.7:
-  nginx2:
-    10.1.1.6:
+  children:
+    nginx1:
+      hosts:
+        10.1.1.7:
+    nginx2:
+      hosts:
+        10.1.1.6:
