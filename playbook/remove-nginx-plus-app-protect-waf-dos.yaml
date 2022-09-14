@@ -19,7 +19,6 @@
       vars:
         nginx_type: plus
         nginx_setup: uninstall
-        #nginx_setup_license: false
         nginx_license:
           certificate: ~/nginx-repo.crt
           key: ~/nginx-repo.key
