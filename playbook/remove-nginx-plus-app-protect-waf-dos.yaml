@@ -3,22 +3,13 @@
   collections:
     - nginxinc.nginx_core
   tasks:
-    - name: CleanUp nginx.conf for Uninstall
-      ansible.builtin.include_role:
-        name: nginx_config
-      vars:
-        nginx_config_main_template_enable: true
-        nginx_config_main_template:
-          template_file: nginx.conf.j2
-          deployment_location: /etc/nginx/nginx.conf
-          backup: true
-
     - name: Uniinstall NGINX Plus
       ansible.builtin.include_role:
         name: nginx
       vars:
         nginx_type: plus
         nginx_setup: uninstall
+        #nginx_setup_license: false
         nginx_license:
           certificate: ~/nginx-repo.crt
           key: ~/nginx-repo.key
